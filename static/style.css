@@ -1,0 +1,234 @@
+/*
+ * Google Fonts: Inter
+ */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+
+/* --- General Styles --- */
+body {
+    font-family: 'Inter', sans-serif;
+    /* Animated vibrant gradient background */
+    background: linear-gradient(135deg, #fce3e9, #e5d7f3, #e0f2f7);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.15);
+    width: 100%;
+    max-width: 650px; /* Slightly wider container */
+    padding: 30px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    color: #4a4a4a;
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+/* --- Chat Interface Styles --- */
+.chat-container {
+    width: 100%;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #f8f9fa;
+    border-radius: 16px;
+    border: 1px solid #e9ecef;
+    overflow: hidden;
+    position: relative;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.messages {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.message {
+    padding: 14px 20px;
+    border-radius: 24px;
+    margin-bottom: 15px;
+    max-width: 85%;
+    line-height: 1.5;
+    word-wrap: break-word;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+.user-message {
+    background: linear-gradient(45deg, #a78bfa, #8a7dfc); /* Gradient for user messages */
+    color: #fff;
+    align-self: flex-end;
+    border-bottom-right-radius: 12px;
+}
+
+.bot-message {
+    background: linear-gradient(45deg, #c3f2d2, #a8e4f0); /* Gradient for bot messages */
+    color: #333;
+    align-self: flex-start;
+    border-bottom-left-radius: 12px;
+}
+
+.spotify-message {
+    background: none;
+    padding: 0;
+    margin-bottom: 20px;
+    box-shadow: none;
+    max-width: 100%;
+}
+
+/* --- Form Styles --- */
+.mood-form {
+    display: flex;
+    padding: 20px;
+    border-top: 1px solid #e9ecef;
+    background-color: #ffffff;
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+    box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.03);
+}
+
+#mood-input {
+    flex-grow: 1;
+    padding: 16px 24px;
+    border: 2px solid #ddd;
+    border-radius: 30px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+#mood-input:focus {
+    border-color: #a78bfa;
+    box-shadow: 0 0 0 4px rgba(167, 139, 250, 0.3);
+}
+
+/* --- Button Styles --- */
+/* This style can be applied to both the mood form button and a start button */
+.send-btn, .start-btn {
+    background: linear-gradient(135deg, #ff9a8b, #ff6a88, #ff99ac); /* More vibrant gradient */
+    background-size: 200% auto;
+    color: #fff;
+    border: none;
+    padding: 16px 28px;
+    border-radius: 30px;
+    font-size: 16px;
+    margin-left: 15px;
+    cursor: pointer;
+    box-shadow: 0 5px 20px rgba(255, 106, 136, 0.5); /* More vibrant shadow */
+    transition: all 0.4s ease;
+    font-weight: 500;
+}
+
+.send-btn:hover, .start-btn:hover {
+    background-position: right center; /* Change gradient direction on hover */
+    box-shadow: 0 8px 25px rgba(255, 106, 136, 0.6);
+    transform: translateY(-3px) scale(1.02);
+}
+
+.send-btn:active, .start-btn:active {
+    box-shadow: 0 2px 8px rgba(255, 106, 136, 0.4);
+    transform: translateY(1px);
+}
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+        align-items: flex-start;
+        min-height: 100vh;
+    }
+    .container {
+        padding: 20px;
+        margin-top: 20px;
+    }
+    .chat-container {
+        height: 65vh;
+    }
+    .send-btn, .start-btn {
+        padding: 14px 20px;
+        margin-left: 10px;
+    }
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+input[type="text"],
+input[type="number"] {
+    width: 100%;
+    padding: 16px 24px;
+    border: 2px solid #ddd;
+    border-radius: 30px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    box-sizing: border-box;
+}
+
+input:focus {
+    border-color: #a78bfa;
+    box-shadow: 0 0 0 4px rgba(167, 139, 250, 0.3);
+}
+
+.btn {
+    background: linear-gradient(135deg, #ff9a8b, #ff6a88, #ff99ac);
+    background-size: 200% auto;
+    color: #fff;
+    border: none;
+    padding: 18px 28px;
+    border-radius: 30px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 5px 20px rgba(255, 106, 136, 0.5);
+    transition: all 0.4s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn:hover {
+    background-position: right center;
+    box-shadow: 0 8px 25px rgba(255, 106, 136, 0.6);
+    transform: translateY(-3px) scale(1.02);
+}
+
+.btn:active {
+    box-shadow: 0 2px 8px rgba(255, 106, 136, 0.4);
+    transform: translateY(1px);
+}
+
+@media (max-width: 480px) {
+    .btn {
+        padding: 16px 24px;
+        font-size: 16px;
+    }
+}
