@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Info</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container user-form">
+        <h2>Just a little info first...</h2>
+        <form action="/listen" method="POST">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="number" name="age" placeholder="Your Age" required>
+            <button type="submit" class="btn">Let's Listen to Music</button>
+        </form>
+    </div>
+</body>
+</html>

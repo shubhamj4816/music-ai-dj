@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Music AI Agent</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+<body>
+    <div class="container music-agent-page">
+        <h1>Music AI Agent</h1>
+        <div class="chat-container">
+            <div id="messages" class="messages">
+                <!-- Initial messages are appended by JS -->
+            </div>
+            <form id="mood-form" class="mood-form">
+                <input type="text" id="mood-input" placeholder="Type your response here..." required autocomplete="off" />
+                <button type="submit" class="send-btn">Send</button>
+            </form>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
